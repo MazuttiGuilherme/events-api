@@ -10,7 +10,7 @@
        "command": "npm run start",
        "env": {
          "TESTE": "LOCAL",
-         "PORTA": "3001",
+         "PORTA": "3000",
        }
     }
    ] 
