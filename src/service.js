@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
-const cursoRoutes = require('./routes/cursos.route');
+const eventRoutes = require('./routes/event.routes');
 
 //const middleware = rerquire('./util/middlewareLocal');
 
 app.use(express.json());
 
-cursoRoutes(app);
+eventRoutes(app);
 
 //app.post("/user/auth", function () {
 //  resizeBy.json({
