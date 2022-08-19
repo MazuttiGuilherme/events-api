@@ -13,7 +13,7 @@ const domainToDTO = (eventList) => {
             ... eventList.map(item => {
                 return {
                     id: item.id,
-                    descricao: item.descricao,
+                    description: item.description,
                     status: item.status
                 }
             })
