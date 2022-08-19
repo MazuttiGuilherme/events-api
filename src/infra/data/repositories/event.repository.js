@@ -42,10 +42,17 @@ const search = ({ status }) => {
             status
         )
     });
+}
 
+const findById = (id) => {
+
+    return data.find(item => {
+        return item.id == id
+    })
 }
 module.exports = {
 
     search,
+    findById
 
 }

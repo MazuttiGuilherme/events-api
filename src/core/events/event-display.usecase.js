@@ -1,12 +1,20 @@
-const eventRepository = require('../../infra/data/repositories/event.repository')
+const eventRepository = require('../infra/data/repositories/event.repository');
+const inscriptionRepository = require('../infra/data/repositories/inscription.repository');
 
 
 module.exports = (id) => {
 
-    let resultFromDB = eventRepository.findById(id);
+    const events = eventRepository.findById(id);
 
-    
+    if(!events) {
+        return undefined;
+    }
 
-    return resultFromDB;
+    let inscriptionsList = inscriptionRepository.search({
+        eventId: id
+    })
+
+    events.inscriptions = inscriptionsList;
+    return events;
 
 }
