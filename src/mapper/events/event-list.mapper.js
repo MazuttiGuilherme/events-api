@@ -3,14 +3,14 @@ const DTOToDomain = ({}) => {
 } 
 
 
-const domainToDTO = (Eventlist) => {
+const domainToDTO = (eventList) => {
     
     
     return {
 
-        total: Eventlist.length,
+        total: eventList.length,
         cursos: [
-            ... Eventlist.map(item => {
+            ... eventList.map(item => {
                 return {
                     id: item.id,
                     descricao: item.descricao,

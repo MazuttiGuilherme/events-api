@@ -1,8 +1,8 @@
-const { EventList } = require('../controllers/events.controller');
+const { eventList } = require('../controllers/events.controller');
 
 const eventRoutes = (app) => {
     
-  app.get("/events", EventList);
+  app.get("/events", eventList);
 }
 
 module.exports = eventRoutes;

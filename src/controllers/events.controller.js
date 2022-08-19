@@ -1,9 +1,9 @@
 const eventStatus = [ "ativo", "inativo"];
-const EventListUseCase = require('../core/events/event-list.usecase');
-const EventListMapper = require('../mapper/events/event-list.mapper');
+const eventListUseCase = require('../core/events/event-list.usecase');
+const eventListMapper = require('../mapper/events/event-list.mapper');
 
 
-const EventList = (req, res) => { 
+const eventList = (req, res) => { 
     
     //todo: extrair dados
     console.log(req.query);
@@ -18,20 +18,20 @@ const EventList = (req, res) => {
         }) 
     }
     
-    //todo: transformando dados da entra em objetos de negocio
+    //todo: transformando dados da entrada em objetos de negocio FALTOU
     
 
     //todo: camada de negocio
-    const ucResult = EventListUseCase({ status: query})
+    const ucResult = eventListUseCase({ status: query})
 
     //todo: montar objeto de saida 
-    res.json(EventListMapper.domainToDTO(ucResult)); 
+    res.json(eventListMapper.domainToDTO(ucResult)); 
   
 }
 
 
 module.exports = {
 
-    EventList,
+    eventList,
 
 }
