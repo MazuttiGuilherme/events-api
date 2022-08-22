@@ -1,6 +1,5 @@
 const eventStatus = [ "ativo", "inativo"];
 
-const { query } = require('express');
 const eventDisplayUseCase = require('../core/events/event-display.usecase');
 
 const eventListUseCase = require('../core/events/event-list.usecase');
@@ -8,18 +7,16 @@ const eventListMapper = require('../mapper/events/event-list.mapper');
 
 
 const eventList = (req, res) => { 
-}
 
-const eventShow = (req, res)
-    //todo: extrair dados
-    console.log(req.params);
-    const id = req.params.id;
+
+    console.log(req.query);
+    const id = req.query.status;
     
     //todo: validar os dados     
-    if (!id || id == ' ') {
-                  
+    if (query) {        
+        if(!eventStatus.includes(req.query.status))
         return res.status(400).json({
-            mensagem: "Event id uninformed",
+            message: "",
         }) 
     }
     
@@ -32,7 +29,7 @@ const eventShow = (req, res)
     //todo: montar objeto de saida 
     res.json(eventListMapper.domainTo(ucResult)); 
   
-
+}
 
 const eventDisplay = (req, res) => {
     console.log(req.params);
