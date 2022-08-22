@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const eventRoutes = require('./routes/event.routes');
+const eventRoutes = require('./routes/events.route');
 
 //const middleware = rerquire('./util/middlewareLocal');
 
