@@ -61,3 +61,8 @@ const create = (model) => {
         model.name
     );
 }
+
+module.exports = {
+    search,
+    create
+}
