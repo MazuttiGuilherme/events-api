@@ -6,7 +6,7 @@ const data = [
         id: '121212',
         eventId: '1',
         registerDate: '2022-08-19',
-        email: 'email',
+        email: 'email@test.com',
         name: 'Guilherme Mazutti',
     }
   ]
@@ -40,8 +40,24 @@ const search = ({ eventId }) => {
     });
 
 }
-module.exports = {
 
-    search,
+const create = (model) => {
 
+    const newItem = {
+        id: '121213',
+        eventId: model.eventId,
+        registerDate: '2022-08-21',
+        email: model.email,
+        name: model.name,
+    }
+
+    data.push(newItem);
+
+    return InscriptionEntity.build(
+        newItem.id,
+        model.eventId,
+        newItem.registerDate,
+        model.email,
+        model.name
+    );
 }

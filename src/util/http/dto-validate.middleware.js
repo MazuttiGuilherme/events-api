@@ -26,7 +26,7 @@ exports.validateDTO = (context, schema) => {
             req[context] = value;
 
             return error ? res.status(400).send({
-                message: createDetails(error).joi(';'),
+                message: createDetails(error).join(';'),
             }) : next();
         
         } catch (error) {

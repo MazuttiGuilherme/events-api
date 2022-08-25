@@ -1,8 +1,8 @@
 const eventStatus = [ "ativo", "inativo"];
 
-const eventDisplayUseCase = require('../core/events/event-display.usecase');
+const eventDisplayUseCase = require('../../core/events/event-display.usecase');
 
-const eventListUseCase = require('../core/events/event-list.usecase');
+const eventListUseCase = require('../../core/events/event-list.usecase');
 const eventListMapper = require('../mapper/events/event-list.mapper');
 
 

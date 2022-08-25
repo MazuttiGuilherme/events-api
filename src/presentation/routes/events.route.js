@@ -1,6 +1,6 @@
 const { eventList, eventDisplay } = require('../controllers/events.controller');
 const { insertInscription } = require('../controllers/inscriptions.controller');
-const { validateDTO } = require('../util/dto-validate.middleware');
+const { validateDTO } = require('../../util/http/dto-validate.middleware');
 const { insertInscriptionBodyDto, insertInscriptionParamsDto } = require('../dto/insert-inscription');
 
 const eventsRoute = (app) => {
