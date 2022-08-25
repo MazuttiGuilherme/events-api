@@ -26,8 +26,7 @@ module.exports = class InscriptionEntity {
         registerDate,
         cancelDate,
         email,
-        name,
-        status
+        name
     ) {
 
         let status = 'ativo';

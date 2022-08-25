@@ -28,31 +28,7 @@ const insertInscription = (req, res) => {
             message: detailsMessages.join(';')
         });                        
     }
-
-
-
-    console.log(body);
-    const bodySchema = joi.object({
-        name: joi.string().min(8).max(15).required(),
-        email: joi.string().email().required(),
-    })
-
-    const bodyResult = bodySchema.validate(body);
-    if (bodyResult.error) {
-
-        const { details } = bodyResult.error;                
-
-        const detailsMessages = details.reduce((acc, item) => {
-
-            return [ ...acc, item.message ]
-        
-        }, [])
-
-        return res.status(400).json({
-            message: detailsMessages.join(';')
-        });
-    }
-        
+     
         res.json(insertInscriptionMapper.domainToDto({})); 
 
     

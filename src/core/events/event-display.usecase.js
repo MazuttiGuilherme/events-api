@@ -1,5 +1,5 @@
-const eventRepository = require('../infra/data/repositories/event.repository');
-const inscriptionRepository = require('../infra/data/repositories/inscription.repository');
+const eventRepository = require('../../infra/data/repositories/event.repository');
+const inscriptionRepository = require('../../infra/data/repositories/inscription.repository');
 
 
 module.exports = (id) => {
