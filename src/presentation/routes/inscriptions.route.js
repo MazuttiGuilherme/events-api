@@ -1,17 +1,18 @@
-const { eventList, eventDisplay } = require('../controllers/events.controller');
-const { insertInscription } = require('../controllers/inscriptions.controller');
+const { validateDTO } = require('../../util/http/dto-validate.middleware');
+const { deleteInscriptionParamsDto } = require('../dto/delete-inscription');
+
+const { deleteInscription } = require('../controllers/inscriptions.controller')
 
 
 const inscriptionsRoute = (app) => {
     
-  app.delete('/inscription/:id', (req, res) => {
+  app.delete(
+    '/inscription/:id', 
+    validateDTO('params', deleteInscriptionParamsDto),
+    deleteInscription 
+    
+    );
 
-    return res.status(200).json({
-        message: "Removed item successfully"
-
-    });
-
-  }); 
 
 }
 

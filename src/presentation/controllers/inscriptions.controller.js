@@ -29,7 +29,13 @@ const insertInscription = (req, res) => {
 
 const deleteInscription = (req, res) => {
   //todo: extrair dados
+  const { params } = req
+  console.log(params); 
+
+
   //todo: validar os dados
+  
+
   //todo: transformando dados da entra em objetos de negocio FALTOU
   //todo: camada de negocio
 
