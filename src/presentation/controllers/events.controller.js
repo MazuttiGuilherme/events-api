@@ -1,7 +1,5 @@
 const eventStatus = [ "ativo", "inativo"];
-
 const eventDisplayUseCase = require('../../core/events/event-display.usecase');
-
 const eventListUseCase = require('../../core/events/event-list.usecase');
 const eventListMapper = require('../mapper/events/event-list.mapper');
 
@@ -54,7 +52,7 @@ const eventDisplay = (req, res) => {
                 return {
                     id: item.id,
                     registerDate: item.registerDate,
-                    name: item.name,
+                    userName: item.userName,
                     status: item.status
                 }
             })
@@ -64,7 +62,6 @@ const eventDisplay = (req, res) => {
 
 
 module.exports = {
-
     eventList,
     eventDisplay
 }

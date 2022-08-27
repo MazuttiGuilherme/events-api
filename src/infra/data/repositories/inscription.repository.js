@@ -4,18 +4,18 @@ const InscriptionEntity = require('../../../core/inscriptions/inscription.entity
 const data = [
     {
         id: '121212',
-        eventId: '1',
-        registerDate: '2022-08-19',
-        email: 'email@test.com',
-        name: 'Guilherme Mazutti',
-    }
+        event_id: '1',
+        register_date: '2022-08-19',
+        user_email: 'email@test.com',
+        user_name: 'Guilherme Mazutti',
+    },
   ]
 
 const search = ({ eventId }) => {
 
     let resultFromDB = data;
     if (eventId) {
-        resultFromDB =  data.filter(item => item.eventId == eventId)                    
+        resultFromDB =  data.filter(item => item.event_id == eventId)                    
     }
 
     //extrair lógica de conversão de dataObject para Entity
@@ -23,19 +23,20 @@ const search = ({ eventId }) => {
 
         const {
             id,
-            eventId,
-            registerDate,
-            email,
-            name,
+            event_id,
+            register_date,
+            cancel_date,
+            user_email,
+            user_name,
         } = item;
 
         return InscriptionEntity.build(
             id,
-            eventId,
-            registerDate,
-            undefined,
-            email,
-            name
+            event_id,
+            register_date,
+            cancel_date,
+            user_email,
+            user_name
         )
     });
 
@@ -45,10 +46,10 @@ const create = (model) => {
 
     const newItem = {
         id: '121213',
-        eventId: model.eventId,
-        registerDate: '2022-08-21',
-        email: model.email,
-        name: model.name,
+        event_id: model.eventId,
+        register_date: '2022-08-21',
+        user_email: model.userEmail,
+        user_name: model.userName,
     }
 
     data.push(newItem);
@@ -56,13 +57,28 @@ const create = (model) => {
     return InscriptionEntity.build(
         newItem.id,
         model.eventId,
-        newItem.registerDate,
-        model.email,
-        model.name
+        newItem.register_date,
+        model.userEmail,
+        model.userName
     );
+}
+
+const findById = (id) => {
+
+    return data.find(item => {
+        return item.id == id
+    })
+}
+
+const update = (model) => {
+    const item = data.find(item => item.id == model.id);
+
+    item.cancel_date = model.cancel_date;
 }
 
 module.exports = {
     search,
-    create
+    create,
+    findById,
+    update
 }

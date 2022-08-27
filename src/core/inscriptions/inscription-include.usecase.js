@@ -6,27 +6,27 @@ const { BusinessError } = require('../errors/business.error')
 
 module.exports = (model) => {
 
-    const { eventId, email, name } = model;
+    const { event_id, user_email, user_name } = model;
 
     //todo: validar se o curso existe
-    const event = EventsRepository.findById(eventId);
+    const event = EventsRepository.findById(event_id);
     if(!event)
         throw new BusinessError('Reported course does not exist')
 
     //todo: validar se o aluno já está cadastrado naquele curso
     const inscriptions = inscriptionRepository.search({
-        eventId: eventId,
+        event_id: event_id,
     });
     if (inscriptions.find(item => {
-        return item.email == email
+        return item.user_email == user_email
     }))
         throw new BusinessError('User already registered')
 
     //todo: salvar dados no banco
     const inscription = inscriptionRepository.create({
-        eventId,
-        email,
-        name
+        event_id,
+        user_email,
+        user_name
     })
 
     return inscription;

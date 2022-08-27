@@ -15,6 +15,7 @@ module.exports = (id) => {
     })
 
     events.inscriptions = inscriptionsList;
+    
     return events;
 
 }

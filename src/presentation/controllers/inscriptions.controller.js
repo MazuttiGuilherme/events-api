@@ -2,6 +2,9 @@ const insertInscriptionMapper = require("../mapper/inscriptions/insert-inscripti
 const deleteInscriptionMapper = require("../mapper/inscriptions/delete-inscription.mapper");
 const joi = require("joi");
 const inscriptionIncludeUsecase = require("../../core/inscriptions/inscription-include.usecase");
+const deleteInscriptionUseCase = require("../../core/inscriptions/delete-inscription.usecase");
+
+const { param } = require("../../service");
 
 const insertInscription = (req, res) => {
   try {
@@ -11,9 +14,9 @@ const insertInscription = (req, res) => {
     //todo: transformando dados de entrada em objetos de negócio
     //todo: remover lógica para o mapper
     const domain = {
-      eventId: params.id,
-      name: body.name,
-      email: body.email,
+      event_id: params.id,
+      userName: body.userName,
+      userEmail: body.userEmail,
     };
     //todo: camada de negócio
     const inscription = inscriptionIncludeUsecase(domain);
@@ -28,19 +31,27 @@ const insertInscription = (req, res) => {
 };
 
 const deleteInscription = (req, res) => {
-  //todo: extrair dados
-  const { params } = req
-  console.log(params); 
+  try {
+    //todo: extrair dados
+    const { params } = req;
+    console.log(params);
 
+    //todo: transformando dados da entra em objetos de negocio FALTOU
+    const model = {
+      inscriptionId: params.id,
+    };
+    //todo: camada de negocio
+    deleteInscriptionUseCase(model);
 
-  //todo: validar os dados
-  
+    //todo: montar objeto de saida
+    res.json(deleteInscriptionMapper.domainToDto({}));
 
-  //todo: transformando dados da entra em objetos de negocio FALTOU
-  //todo: camada de negocio
+  } catch (error) {
 
-  //todo: montar objeto de saida
-  res.json(deleteInscriptionMapper.domainToDto({}));
+    return res.status(error.statusCode || 500).json({
+      message: error.statusCode ? error.message : "Internal server Error",
+    });
+  }
 };
 
 module.exports = {

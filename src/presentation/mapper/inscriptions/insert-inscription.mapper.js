@@ -10,7 +10,7 @@ const domainToDto = ({inscription}) => {
         inscription: {
             id: inscription.id,
             registerDate: inscription.registerDate, 
-            name: inscription.name,
+            userName: inscription.UserName,
             status: inscription.status
         }
     }

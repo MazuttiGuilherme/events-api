@@ -5,8 +5,8 @@ module.exports = class InscriptionEntity {
         eventId,
         registerDate,
         cancelDate,
-        email,
-        name,
+        userEmail,
+        userName,
         status
 
     ) {
@@ -15,8 +15,8 @@ module.exports = class InscriptionEntity {
         this.eventId = eventId;
         this.registerDate = registerDate;
         this.cancelDate = cancelDate;
-        this.email = email;
-        this.name = name;
+        this.userEmail = userEmail;
+        this.userName = userName;
         this.status = status
     }
 
@@ -25,8 +25,8 @@ module.exports = class InscriptionEntity {
         eventId,
         registerDate,
         cancelDate,
-        email,
-        name
+        userEmail,
+        userName
     ) {
 
         let status = 'ativo';
@@ -39,8 +39,8 @@ module.exports = class InscriptionEntity {
             eventId,
             registerDate,
             cancelDate,
-            email,
-            name,
+            userEmail,
+            userName,
             status
         )
 

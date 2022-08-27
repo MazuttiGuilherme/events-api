@@ -5,15 +5,15 @@ const data = [
     
     {
         id: "1",
-        description: "teste 1",
-        status: "ativo",
+        description: "test 1",
+        status: "active",
 
     },
 
     {
         id: "2",
-        description: "teste 2",
-        status: "inativo",
+        description: "test 2",
+        status: "inactive",
     }
 ]
 
@@ -50,6 +50,8 @@ const findById = (id) => {
         return item.id == id
     })
 }
+
+
 module.exports = {
 
     search,

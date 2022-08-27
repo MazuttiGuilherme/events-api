@@ -1,7 +1,7 @@
 const middlewareLocal = (req, res, next) => {
 
     if (req.bacon.id !== 'test2') {
-      res.status(401).send('usuario não autenticado')
+      res.status(401).send('User not authenticated')
     }
     else {
       next()
