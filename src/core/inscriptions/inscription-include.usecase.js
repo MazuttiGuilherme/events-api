@@ -17,7 +17,9 @@ module.exports = (model) => {
     const inscriptions = inscriptionRepository.search({
         event_id: event_id,
     });
+    console.log(inscriptions, user_email)
     if (inscriptions.find(item => {
+        
         return item.user_email == user_email
     }))
         throw new BusinessError('User already registered')

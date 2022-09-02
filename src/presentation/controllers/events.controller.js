@@ -8,7 +8,7 @@ const eventList = (req, res) => {
 
 
     console.log(req.query);
-    const id = req.query.status;
+    const query = req.query.status;
     
     //todo: validar os dados     
     if (query) {        
@@ -25,7 +25,7 @@ const eventList = (req, res) => {
     const ucResult = eventListUseCase({ status: query })
 
     //todo: montar objeto de saida 
-    res.json(eventListMapper.domainTo(ucResult)); 
+    res.json(eventListMapper.domainToDTO(ucResult)); 
   
 }
 

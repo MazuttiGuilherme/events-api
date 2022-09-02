@@ -4,7 +4,7 @@ const joi = require("joi");
 const inscriptionIncludeUsecase = require("../../core/inscriptions/inscription-include.usecase");
 const deleteInscriptionUseCase = require("../../core/inscriptions/delete-inscription.usecase");
 
-const { param } = require("../../service");
+
 
 const insertInscription = (req, res) => {
   try {
@@ -15,8 +15,8 @@ const insertInscription = (req, res) => {
     //todo: remover lógica para o mapper
     const domain = {
       event_id: params.id,
-      userName: body.userName,
-      userEmail: body.userEmail,
+      user_name: body.name,
+      user_email: body.email,
     };
     //todo: camada de negócio
     const inscription = inscriptionIncludeUsecase(domain);

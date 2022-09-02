@@ -1,0 +1,17 @@
+
+
+git remote add origin https://gitlab.com/bootcamp_fullstack_2022/01-api.git
+
+docker run --name test-postgres-v1 -p 5432:5432 -e POSTGRES_PASSWORD=ezer123 postgres
+
+docker run -p 3306:3306 --name mysql-local-v1 -e MYSQL_ROOT_PASSWORD=root -d mysql 
+
+#heroku registry deploy strategy
+
+#docker build --platform linux/amd64 -f Dockerfile --iidfile imageid.txt -t registry.heroku.com/bootcamp-2022-01/web .
+
+#docker login -u _ -p 59706b55-a78c-46ab-bb22-172f3653cb5f registry.heroku.com
+
+#docker push registry.heroku.com/bootcamp-2022-01/web
+
+# curl -X PATCH https://api.heroku.com/apps/bootcamp-2022-01/formation --header "Content-Type: application/json" --header "Accept: application/vnd.heroku+json; version=3.docker-releases" --header "Authorization: Bearer baf1e263-b734-4100-88c1-60b825717c85" --data '{ "updates": [ { "type": "web", "docker_image": "'$(cat imageid.txt)'" } ] }'

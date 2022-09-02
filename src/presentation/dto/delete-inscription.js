@@ -1,7 +1,7 @@
 const joi = require('joi');
 
 const deleteInscriptionParamsDto = joi.object({
-    name: joi.number().required()
+    id: joi.number().required()
 });
 
 module.exports = {

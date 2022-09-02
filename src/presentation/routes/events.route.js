@@ -16,15 +16,7 @@ const eventsRoute = (app) => {
     insertInscription
   );
 
-  app.delete(
-    '/events/:id/inscription/:idinscription',
-    (req, res) => {
 
-
-
-        return res.json()
-    }
-  )
 
 
 

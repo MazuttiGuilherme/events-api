@@ -46,20 +46,19 @@ const create = (model) => {
 
     const newItem = {
         id: '121213',
-        event_id: model.eventId,
+        event_id: model.event_id,
         register_date: '2022-08-21',
-        user_email: model.userEmail,
-        user_name: model.userName,
+        user_email: model.user_email,
+        user_name: model.user_name,
     }
 
     data.push(newItem);
-
     return InscriptionEntity.build(
         newItem.id,
-        model.eventId,
+        model.event_id,
         newItem.register_date,
-        model.userEmail,
-        model.userName
+        model.user_email,
+        model.user_name
     );
 }
 
