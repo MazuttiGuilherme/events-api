@@ -17,8 +17,15 @@
   "devDependencies": {
     "nodemon": "^2.0.19"
   },
-
   "resolutions": {
     "stylus": "^0.54.8"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MazuttiGuilherme/events-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MazuttiGuilherme/events-api/issues"
+  },
+  "homepage": "https://github.com/MazuttiGuilherme/events-api#readme"
 }
