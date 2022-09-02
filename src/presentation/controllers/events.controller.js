@@ -1,4 +1,4 @@
-const eventStatus = [ "ativo", "inativo"];
+const eventStatus = [ "active", "inactive"];
 const eventDisplayUseCase = require('../../core/events/event-display.usecase');
 const eventListUseCase = require('../../core/events/event-list.usecase');
 const eventListMapper = require('../mapper/events/event-list.mapper');
@@ -22,7 +22,7 @@ const eventList = (req, res) => {
     
 
     //todo: camada de negocio
-    const ucResult = eventListUseCase({ status: query})
+    const ucResult = eventListUseCase({ status: query })
 
     //todo: montar objeto de saida 
     res.json(eventListMapper.domainTo(ucResult)); 

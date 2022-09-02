@@ -29,12 +29,12 @@ module.exports = class InscriptionEntity {
         userName
     ) {
 
-        let status = 'ativo';
-        if (!cancelDate && cancelDate !== ' ' && cancelDate !== '' ) {
-            status = 'inativo';
+        let status = 'active';
+        if (cancelDate && cancelDate !== ' ' && cancelDate !== '') {
+            status = 'inactive';
         }
 
-        return new InscriptionEntity (
+        return new InscriptionEntity(
             id,
             eventId,
             registerDate,

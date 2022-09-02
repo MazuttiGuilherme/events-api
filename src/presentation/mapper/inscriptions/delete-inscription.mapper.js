@@ -5,7 +5,7 @@ const dtoToDomain = ({}) => {
 const domainToDto = () => {
     
     return {
-        mensagem: "sucesso!",
+        message: "success!",
     }
 } 
 

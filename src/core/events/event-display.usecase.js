@@ -12,7 +12,7 @@ module.exports = (id) => {
 
     let inscriptionsList = inscriptionRepository.search({
         eventId: id
-    })
+    });
 
     events.inscriptions = inscriptionsList;
     

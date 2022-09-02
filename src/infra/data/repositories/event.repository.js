@@ -53,7 +53,6 @@ const findById = (id) => {
 
 
 module.exports = {
-
     search,
     findById
 

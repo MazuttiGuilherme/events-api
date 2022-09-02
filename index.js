@@ -1,6 +1,6 @@
 const service = require('./src/service');
 
-const porta = process.env.PORTA || 3000;
+const porta = process.env.PORT || 3000;
 
 
 const listener = service.listen(porta, function () {
